@@ -43,7 +43,7 @@ By default, AWS dynamically assigns a public IP to EC2 instances, which will bre
 # Web Server Setup
 
 ## Installing Apache
-1. If not already done, connect to the web server instance (see above on [View instance details/connect](https://github.com/jno-de/AmazonPriceMatching/blob/main/README.md#view-instance-detailsconnect))
+1. If not already done, connect to the web server instance (see above on [View instance details/connect](https://github.com/jno-de/AmazonPriceMatching#view-instance-detailsconnect))
 2. Run the following lines of code in the Ubuntu CLI to install Apache:
 ```
 sudo apt update
@@ -75,7 +75,7 @@ sudo nano api-link.html
 # Database Server Setup
 
 ## Creating the database
-1. If not already done, connect to the database server instance (see above on [View instance details/connect](https://github.com/jno-de/AmazonPriceMatching/blob/main/README.md#view-instance-detailsconnect))
+1. If not already done, connect to the database server instance (see above on [View instance details/connect](https://github.com/jno-de/AmazonPriceMatching#view-instance-detailsconnect))
 2. Run this to install and launch MySQL:
 ```
 sudo apt update
@@ -104,7 +104,7 @@ FLUSH PRIVILEGES;
 # API Server Setup
 
 ## Installing Apache, PHP, and MySQL client
-1. If not already done, connect to the API server instance (see above on [View instance details/connect](https://github.com/jno-de/AmazonPriceMatching/blob/main/README.md#view-instance-detailsconnect))
+1. If not already done, connect to the API server instance (see above on [View instance details/connect](https://github.com/jno-de/AmazonPriceMatching#view-instance-detailsconnect))
 2. Run the following to install Apache, PHP, and the MySQL client:
 ```
 sudo apt update
