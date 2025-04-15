@@ -22,4 +22,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Files from AWS instances.
 
 [0.1.1]: https://github.com/jno-de/AmazonPriceMatching/compare/v0.1.0...v0.1.1
-[0.1.0]: https://github.com/jno-de/AmazonPriceMatching/releases/tag/v1.0.0
+[0.1.0]: https://github.com/jno-de/AmazonPriceMatching/releases/tag/v0.1.0
