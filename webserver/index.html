@@ -1,83 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amazon Price Matching</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Amazon Price Matching</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@300;600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@300;600&display=swap" rel="stylesheet">
 
-    <style>
-        body, h1, h2, p {
-            margin: 0;
-            padding: 0;
-        }
+        <style>
+            body {
+                font-family: 'Roboto', sans-serif;
+                background-color: #f4f4f4;
+                color: #333;
+                line-height: 1.6;
+                margin: 0;
+                padding: 0;
+            }
 
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            line-height: 1.6;
-        }
+            header {
+                color: white;
+                text-align: center;
+                margin: 0;
+                padding: 0;
+            }
 
-        header {
-            background-color: #0a74da;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
+            h1 {
+                font-size: 2em;
+                font-weight: 700;
+                background-color: #232f3e;
+            }
 
-        h1 {
-            font-size: 2.5em;
-            font-weight: 700;
-        }
+            .container {
+                width: 80%;
+                margin: 0 auto;
+                padding: 20px;
+                background-color: white;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
 
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+            iframe {
+                width: 100%;
+                height: 425px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+            }
 
-        h2 {
-            font-family: 'Open Sans', sans-serif;
-            font-size: 1.8em;
-            color: #0a74da;
-            margin-bottom: 20px;
-        }
+            .btn {
+                display: inline-block;
+                background-color: #304157;
+                color: white;
+                padding: 12px 20px;
+                text-decoration: none;
+                border-radius: 5px;
+                margin-top: 20px;
+            }
 
-        iframe {
-            width: 100%;
-            height: 425px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
+            #logo {
+                width: 150px;
+                padding: 20px;
+            }
 
-        .btn {
-            display: inline-block;
-            background-color: #0a74da;
-            color: white;
-            padding: 12px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
-        } 
-    </style>
-</head>
-<body>
+            .select-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                padding-bottom: 20px;
+            }
 
-<header>
-    <h1>Amazon Price Matching</h1>
-</header>
+            #select-title {
+                margin: 0;
+                font-size: 1.2em;
+            }
 
-<div class="container">
-    <h3>Currently comparing to: Walmart</h3>
-    <iframe src="http://API_Server_Public_IP/data.php"></iframe>
+            #selection {
+                padding: 5px;
+            }
+        </style>
+    </head>
 
-    <a href="api-link.html" class="btn">Raw Data (API)</a>
-</div>
+    <body>
+        <header>
+            <a href="https://www.amazon.com/"><img id="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Amazon_2024.svg/2560px-Amazon_2024.svg.png"></a>
+            <h1>Price Matching Tool</h1>
+        </header>
 
-</body>
+        <div class="container">
+
+            <div class="select-container">
+                <h3 id="select-title">Currently comparing to:</h3>
+            
+                <select id="selection">
+                    <option value="walmart">Walmart</option>
+                    <option value="target">Target</option>
+                    <option value="bestbuy">Best Buy</option>
+                </select>
+            </div>
+
+            <iframe src="http://API_Server_Public_IP/data.php"></iframe>
+
+            <a href="api-link.html" class="btn">Raw Data (API)</a>
+        </div>
+    </body>
 </html>
