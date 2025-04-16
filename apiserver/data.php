@@ -36,7 +36,7 @@ echo "
         }
 
         th {
-            background-color: #4CAF50;
+            background-color: #304157;
             color: white;
             font-weight: normal; /* Lighter text */
         }
