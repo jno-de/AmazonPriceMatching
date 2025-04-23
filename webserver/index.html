@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>Amazon Price Matching</title>
 
+        <!-- Load Roboto font from Google Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@300;600&display=swap" rel="stylesheet">
 
+        <!-- CSS styling -->
         <style>
             body {
                 font-family: 'Roboto', sans-serif;
@@ -28,6 +30,8 @@
                 font-size: 2em;
                 font-weight: 700;
                 background-color: #232f3e;
+                padding: 20px;
+                margin: 0;
             }
 
             .container {
@@ -53,7 +57,7 @@
                 padding: 12px 20px;
                 text-decoration: none;
                 border-radius: 5px;
-                margin-top: 20px;
+                margin: 10px;
             }
 
             #logo {
@@ -77,20 +81,35 @@
             #selection {
                 padding: 5px;
             }
+
+            #upc-container {
+                text-align: center;
+                margin-bottom: 10px;
+            }
+
+            #upc {
+                padding: 8px;
+                width: 250px;
+                font-size: 1em;
+            }
+
+            .button-container {
+                text-align: center;
+                margin-bottom: 10px;
+            }
         </style>
     </head>
 
+    <!-- HTML output -->
     <body>
         <header>
-            <a href="https://www.amazon.com/"><img id="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Amazon_2024.svg/2560px-Amazon_2024.svg.png"></a>
+            <a href="https://www.amazon.com/"><img id="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Amazon_2024.svg/2560px-Amazon_2024.svg.png"/></a>
             <h1>Price Matching Tool</h1>
         </header>
 
         <div class="container">
-
             <div class="select-container">
                 <h3 id="select-title">Currently comparing to:</h3>
-            
                 <select id="selection">
                     <option value="walmart">Walmart</option>
                     <option value="target">Target</option>
@@ -98,9 +117,25 @@
                 </select>
             </div>
 
-            <iframe src="http://API_Server_Public_IP/data.php"></iframe>
+            <div id="upc-container"><input type="text" id="upc" placeholder="Enter UPC to filter"/></div>
 
-            <a href="api-link.html" class="btn">Raw Data (API)</a>
+            <div class="button-container">
+                <a href="javascript:void(0);" class="btn" onclick="updateIframe()">Compare</a>
+                <a href="api-link.html" class="btn" target="_blank">Raw Data (API)</a>
+            </div>
+
+            <iframe id="dataIframe" src="http://API_Server_Public_IP/data.php"></iframe>
         </div>
+
+        <!-- Concatenates filter values to API embed link for displaying table -->
+        <script>
+            function updateIframe() {
+                var store = document.getElementById('selection').value;
+                var upc = document.getElementById('upc').value;
+                var apiServer = 'http://API_Server_Public_IP';
+                var url = apiServer + '/data.php?store=' + store + '&upc=' + encodeURIComponent(upc);
+                document.getElementById('dataIframe').src = url;
+            }
+        </script>
     </body>
 </html>
